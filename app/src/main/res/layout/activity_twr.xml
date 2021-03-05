@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TwrActivity"
+    android:background="@color/lighter_background">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/user_log"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/total_mass_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Please, fill all the fields below" />
+
+    <!-- SEPARATOR -->
+
+    <TextView
+        android:id="@+id/total_mass_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Total Mass (kg)"
+        android:textSize="28sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/user_log"
+        app:layout_constraintBottom_toTopOf="@id/total_mass" />
+
+    <EditText
+        android:id="@+id/total_mass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:inputType="number"
+        android:maxLength="7"
+        android:singleLine="true"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/total_mass_label" />
+
+    <!-- SEPARATOR -->
+
+    <TextView
+        android:id="@+id/gravity_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Gravity (m/s²)"
+        android:textSize="28sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_mass"
+        app:layout_constraintBottom_toTopOf="@id/gravity" />
+
+    <EditText
+        android:id="@+id/gravity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        android:singleLine="true"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gravity_label" />
+
+    <!-- SEPARATOR -->
+
+    <TextView
+        android:id="@+id/thrust_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Engine Thrust (N)"
+        android:textSize="24sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gravity" />
+
+    <EditText
+        android:id="@+id/thrust"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="22sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/thrust_label" />
+
+    <!-- SEPARATOR -->
+
+    <TextView
+        android:id="@+id/quantity_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Engine Amount"
+        android:textSize="24sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/gravity" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="1"
+        android:textSize="24sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/quantity_label" />
+
+    <Button
+        android:id="@+id/decrement_button"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="-"
+        android:textSize="26sp"
+        android:gravity="center_horizontal"
+        android:backgroundTint="@color/buttons"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@id/quantity"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/quantity_label" />
+
+    <Button
+        android:id="@+id/increment_button"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+"
+        android:textSize="26sp"
+        android:gravity="center_horizontal"
+        android:backgroundTint="@color/buttons"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/quantity"
+        app:layout_constraintTop_toBottomOf="@id/quantity_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
