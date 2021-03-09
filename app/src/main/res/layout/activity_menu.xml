@@ -19,8 +19,15 @@
     <androidx.constraintlayout.widget.Group
         android:id="@+id/list_items_deltav"
         android:layout_width="0dp"
-        android:layout_height="125dp"
-        app:constraint_referenced_ids="icon_deltav,title_deltav"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="icon_deltav,title_deltav"/>
+
+    <Button
+        android:id="@+id/buttonDeltaV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/buttonTWR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,11 +60,18 @@
     <androidx.constraintlayout.widget.Group
         android:id="@+id/list_items_twr"
         android:layout_width="0dp"
-        android:layout_height="125dp"
-        app:constraint_referenced_ids="icon_twr,title_twr"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="icon_twr,title_twr" />
+
+    <Button
+        android:id="@+id/buttonTWR"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/buttonSpaceX"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/list_items_deltav" />
+        app:layout_constraintTop_toBottomOf="@id/buttonDeltaV" />
 
     <ImageView
         android:id="@+id/icon_twr"
@@ -87,11 +101,18 @@
     <androidx.constraintlayout.widget.Group
         android:id="@+id/list_items_spacex"
         android:layout_width="0dp"
-        android:layout_height="125dp"
-        app:constraint_referenced_ids="icon_spacex,title_spacex"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="icon_spacex,title_spacex" />
+
+    <Button
+        android:id="@+id/buttonSpaceX"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="@id/icon_spacex"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/list_items_twr" />
+        app:layout_constraintTop_toBottomOf="@id/buttonTWR" />
 
     <ImageView
         android:id="@+id/icon_spacex"

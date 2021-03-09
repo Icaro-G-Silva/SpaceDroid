@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Button
 import androidx.constraintlayout.widget.Group
 
 class MenuActivity : AppCompatActivity() {
@@ -14,29 +15,35 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        val groupDeltaV: Group = findViewById(R.id.list_items_deltav)
-        generateListeners(groupDeltaV, Intent(this, DeltaVActivity::class.java))
+        val buttonDeltaV: Button = findViewById(R.id.buttonDeltaV)
+        generateListeners(buttonDeltaV, Intent(this, DeltaVActivity::class.java))
 
-        val groupTWR: Group = findViewById(R.id.list_items_twr)
-        generateListeners(groupTWR, Intent(this, TwrActivity::class.java))
+        val buttonTWR: Button = findViewById(R.id.buttonTWR)
+        generateListeners(buttonTWR, Intent(this, TwrActivity::class.java))
 
-        val groupSpaceX: Group = findViewById(R.id.list_items_spacex)
-        generateListeners(groupSpaceX, Intent(this, SpaceXActivity::class.java))
+        val buttonSpaceX: Button = findViewById(R.id.buttonSpaceX)
+        generateListeners(buttonSpaceX, Intent(this, SpaceXActivity::class.java))
 
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     private fun generateListeners(view: View, intent: Intent) {
-        view.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> view.setBackgroundResource(R.color.buttons)
-                MotionEvent.ACTION_UP -> view.setBackgroundResource(R.color.transparent)
-            }
-            v?.onTouchEvent(event) ?: true
-        }
-
         view.setOnClickListener {
             startActivity(intent)
         }
     }
+
+//    @SuppressLint("ClickableViewAccessibility")
+//    private fun generateListeners(view: View, intent: Intent) {
+//        view.setOnTouchListener { v, event ->
+//            when (event?.action) {
+//                MotionEvent.ACTION_DOWN -> view.setBackgroundResource(R.color.buttons)
+//                MotionEvent.ACTION_UP -> view.setBackgroundResource(R.color.transparent)
+//            }
+//            v?.onTouchEvent(event) ?: true
+//        }
+//
+//        view.setOnClickListener {
+//            startActivity(intent)
+//        }
+//    }
 }
