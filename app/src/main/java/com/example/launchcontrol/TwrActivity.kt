@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.launchcontrol.enums.TwrEnum
 
 class TwrActivity : AppCompatActivity() {
     private lateinit var totalMass: EditText
@@ -39,8 +40,8 @@ class TwrActivity : AppCompatActivity() {
 
         decrementButton = findViewById(R.id.decrement_button)
         incrementButton = findViewById(R.id.increment_button)
-        generateClickListener(decrementButton, 0)
-        generateClickListener(incrementButton, 1)
+        generateClickListener(decrementButton, TwrEnum.DECREMENT.representationalNumber)
+        generateClickListener(incrementButton, TwrEnum.INCREMENT.representationalNumber)
 
     }
 
@@ -57,7 +58,7 @@ class TwrActivity : AppCompatActivity() {
 
     private fun generateClickListener(view: View, operation: Int) {
         view.setOnClickListener {
-            if(operation == 1) quantityValue++ else if(quantityValue > 1) quantityValue--
+            if(operation == TwrEnum.INCREMENT.representationalNumber) quantityValue++ else if(quantityValue > 1) quantityValue--
             updateQuantity()
             calculate()
             displayMessage()
