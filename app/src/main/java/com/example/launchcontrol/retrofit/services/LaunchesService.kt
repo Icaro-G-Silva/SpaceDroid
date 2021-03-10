@@ -1,5 +1,6 @@
-package com.example.launchcontrol.retrofit
+package com.example.launchcontrol.retrofit.services
 
+import com.example.launchcontrol.retrofit.entities.Launches
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

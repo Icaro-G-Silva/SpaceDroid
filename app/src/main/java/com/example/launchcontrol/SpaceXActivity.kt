@@ -1,21 +1,24 @@
 package com.example.launchcontrol
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import com.example.launchcontrol.retrofit.Launches
+import com.example.launchcontrol.enums.SpaceXEnum
+import com.example.launchcontrol.retrofit.entities.Launches
 import com.example.launchcontrol.retrofit.RetroFitConfig
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.reflect.typeOf
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SpaceXActivity : AppCompatActivity() {
     private lateinit var spinner: Spinner
@@ -42,6 +45,12 @@ class SpaceXActivity : AppCompatActivity() {
     private lateinit var videoLink: Button
     private lateinit var videoLinkContent: String
 
+    private lateinit var launchYear: EditText
+    private lateinit var launchYearContent: String
+
+    private val date: Date = Calendar.getInstance().time
+    private val actualYear: String = SimpleDateFormat("yyyy", Locale.getDefault()).format(date)
+
     private val launches: MutableList<Launches> = ArrayList()
     private val spinnerList: MutableList<String> = ArrayList()
 
@@ -49,6 +58,7 @@ class SpaceXActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_space_x)
 
+        launchYear = findViewById(R.id.launchYear)
         missionName = findViewById(R.id.missionName)
         missionNameContent = findViewById(R.id.missionName_Content)
         rocketName = findViewById(R.id.rocketName)
@@ -61,19 +71,33 @@ class SpaceXActivity : AppCompatActivity() {
         orbitContent = findViewById(R.id.orbit_Content)
         siteName = findViewById(R.id.siteName)
         siteNameContent = findViewById(R.id.siteName_Content)
-
         videoLink = findViewById(R.id.videoLinkButton)
-        videoLinkContent = "https://soundcloud.com/icaro-g-silva"
-
         loading = findViewById(R.id.loading)
         spinner = findViewById(R.id.launches_spinner)
-        spinnerList.add("Select an option")
 
         hideElements()
-        getAPIinfo()
+        generateLaunchYearListener()
+    }
+
+    private fun generateLaunchYearListener() {
+        launchYear.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val launchYearText: String = launchYear.text.toString()
+                if(launchYearText.isNotEmpty() && launchYearText.length == 4) {
+                    if(launchYearText.toInt() >= SpaceXEnum.INITIAL_YEAR.year && launchYearText.toInt() < actualYear.toInt()) {
+                        launchYearContent = launchYearText
+                        getAPIinfo()
+                    } else generateDialog("We don't have any launches' information for this year\n\nD:", "Mismatch year")
+                }
+            }
+        })
     }
 
     private fun generateSpinnerList() {
+        spinnerList.clear()
+        spinnerList.add("Select an option")
         launches.forEach { launch -> spinnerList.add(launch.missionName) }
         val adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, spinnerList)
         spinner.adapter = adapter
@@ -82,7 +106,6 @@ class SpaceXActivity : AppCompatActivity() {
     private fun generateSpinnerListener() {
         spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) { hideElements() }
-
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if(position != 0) renderLaunch(launches[position-1]) else hideElements()
             }
@@ -97,14 +120,16 @@ class SpaceXActivity : AppCompatActivity() {
     }
 
     private fun getAPIinfo() {
+        hideElements()
         loading.visibility = View.VISIBLE
         spinner.visibility = View.GONE
-        val call: Call<List<Launches>> = RetroFitConfig().getLaunchesService().getLaunches("2020")
+        val call: Call<List<Launches>> = RetroFitConfig().getLaunchesService().getLaunches(launchYearContent)
         call.enqueue(object: Callback<List<Launches>> {
             override fun onResponse(call: Call<List<Launches>>?, response: Response<List<Launches>>?) {
                 if(response?.isSuccessful!!) {
                     loading.visibility = View.GONE
                     spinner.visibility = View.VISIBLE
+                    launches.clear()
                     response.body().forEach { launch -> launches.add(launch) }
                     generateSpinnerList()
                     generateSpinnerListener()
@@ -113,7 +138,7 @@ class SpaceXActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Launches>>?, t: Throwable?) {
                 loading.visibility = View.GONE
-                generateDialog("You may try again later :)", "Error")
+                generateDialog("You may try again later\n\n:)", "API Error")
                 Log.e(null, t.toString())
             }
         })
@@ -154,23 +179,26 @@ class SpaceXActivity : AppCompatActivity() {
     private fun renderLaunch(launch: Launches) {
         showElements()
         missionNameContent.text = launch.missionName
-        rocketNameContent.text = launch.rocketName
-        payloadTypeContent.text = launch.payloadType
-        payloadIdContent.text = launch.payloadId
-        orbitContent.text = launch.orbit
-        siteNameContent.text = launch.siteName
-//        videoLinkContent = launch.videoLink
-        generateLinkButtonListener()
+        rocketNameContent.text = launch.rocket.rocketName
+        payloadTypeContent.text = launch.rocket.secondStage.payloads[0].payloadType
+        payloadIdContent.text = launch.rocket.secondStage.payloads[0].payloadId
+        orbitContent.text = launch.rocket.secondStage.payloads[0].orbit
+        siteNameContent.text = launch.launchSite.siteName
+
+        videoLink.visibility = View.GONE
+        launch.links.videoLink?.let { link ->
+            videoLinkContent = link
+            videoLink.visibility = View.VISIBLE
+            generateLinkButtonListener()
+        }
     }
 
     private fun generateDialog(message: String, title: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(title)
         builder.setMessage(message)
-
         builder.setPositiveButton(android.R.string.ok) { dialog, which ->
-            Toast.makeText(applicationContext,
-                android.R.string.ok, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, android.R.string.ok, Toast.LENGTH_SHORT).show()
         }
         builder.show()
     }

@@ -24,6 +24,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <EditText
+        android:id="@+id/launchYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="60dp"
+        android:inputType="number"
+        android:maxLength="4"
+        android:tooltipText="Minimum year: 2006"
+        tools:text = "2020"
+        android:textSize="22sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline" />
+
     <Spinner
         android:id="@+id/launches_spinner"
         android:layout_width="0dp"
@@ -32,8 +47,10 @@
         tools:visibility="visible"
         android:layout_marginVertical="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SEPARATOR -->
 
     <TextView
         android:id="@+id/missionName"
@@ -46,7 +63,7 @@
         android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/launches_spinner" />
+        app:layout_constraintTop_toBottomOf="@id/launchYear" />
 
     <TextView
         android:id="@+id/missionName_Content"
