@@ -25,12 +25,12 @@
     <Button
         android:id="@+id/buttonDeltaV"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/buttonTWR"
+        android:layout_height="100dp"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        app:layout_constraintBottom_toBottomOf="@id/icon_deltav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/icon_deltav" />
 
     <ImageView
         android:id="@+id/icon_deltav"
@@ -66,12 +66,12 @@
     <Button
         android:id="@+id/buttonTWR"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/buttonSpaceX"
+        android:layout_height="100dp"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        app:layout_constraintBottom_toBottomOf="@id/icon_twr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonDeltaV" />
+        app:layout_constraintTop_toTopOf="@id/icon_twr" />
 
     <ImageView
         android:id="@+id/icon_twr"
@@ -107,12 +107,12 @@
     <Button
         android:id="@+id/buttonSpaceX"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/transparent"
+        android:layout_height="100dp"
+        style="@android:style/Widget.Holo.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="@id/icon_spacex"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonTWR" />
+        app:layout_constraintTop_toTopOf="@id/icon_spacex" />
 
     <ImageView
         android:id="@+id/icon_spacex"

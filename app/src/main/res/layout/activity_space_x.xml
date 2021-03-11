@@ -24,11 +24,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/launch_year"
+        android:textSize="24sp"
+        android:textColor="@android:color/primary_text_dark"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/launchYear"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/launchYear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="60dp"
+        android:layout_marginVertical="90dp"
         android:inputType="number"
         android:maxLength="4"
         android:tooltipText="Minimum year: 2006"
@@ -45,7 +57,7 @@
         android:layout_height="50dp"
         android:visibility="gone"
         tools:visibility="visible"
-        android:layout_marginVertical="60dp"
+        android:layout_marginVertical="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
