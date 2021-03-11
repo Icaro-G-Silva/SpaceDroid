@@ -10,6 +10,9 @@ import android.widget.Button
 import androidx.constraintlayout.widget.Group
 
 class MenuActivity : AppCompatActivity() {
+
+    val menuList: List<Menu> = createMenu()
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,18 +35,17 @@ class MenuActivity : AppCompatActivity() {
         }
     }
 
-//    @SuppressLint("ClickableViewAccessibility")
-//    private fun generateListeners(view: View, intent: Intent) {
-//        view.setOnTouchListener { v, event ->
-//            when (event?.action) {
-//                MotionEvent.ACTION_DOWN -> view.setBackgroundResource(R.color.buttons)
-//                MotionEvent.ACTION_UP -> view.setBackgroundResource(R.color.transparent)
-//            }
-//            v?.onTouchEvent(event) ?: true
-//        }
-//
-//        view.setOnClickListener {
-//            startActivity(intent)
-//        }
-//    }
+    private fun createMenu(): List<Menu> {
+        return arrayListOf(
+                Menu("Delta-V Calculator", R.drawable.delta_v),
+                Menu("TWR Calculator", R.drawable.twr),
+                Menu("SpaceX Launches", R.drawable.spacex_launches)
+        )
+    }
+
 }
+
+data class Menu(
+        val title: String,
+        val icon: Int
+)
