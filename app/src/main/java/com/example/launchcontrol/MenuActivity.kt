@@ -1,38 +1,26 @@
 package com.example.launchcontrol
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.widget.Button
-import androidx.constraintlayout.widget.Group
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.launchcontrol.entities.Menu
+import com.example.launchcontrol.recyclerviews.RecyclerViewMenuAdapter
 
 class MenuActivity : AppCompatActivity() {
 
-    val menuList: List<Menu> = createMenu()
+    private val menuList: List<Menu> = createMenu()
 
-    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        val buttonDeltaV: Button = findViewById(R.id.buttonDeltaV)
-        generateListeners(buttonDeltaV, Intent(this, DeltaVActivity::class.java))
+        val recycler: RecyclerView = findViewById(R.id.recyclerViewMenu)
 
-        val buttonTWR: Button = findViewById(R.id.buttonTWR)
-        generateListeners(buttonTWR, Intent(this, TwrActivity::class.java))
+        recycler.adapter = RecyclerViewMenuAdapter(menuList)
+        recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recycler.setHasFixedSize(false)
 
-        val buttonSpaceX: Button = findViewById(R.id.buttonSpaceX)
-        generateListeners(buttonSpaceX, Intent(this, SpaceXActivity::class.java))
-
-    }
-
-    private fun generateListeners(view: View, intent: Intent) {
-        view.setOnClickListener {
-            startActivity(intent)
-        }
     }
 
     private fun createMenu(): List<Menu> {
@@ -42,10 +30,4 @@ class MenuActivity : AppCompatActivity() {
                 Menu("SpaceX Launches", R.drawable.spacex_launches)
         )
     }
-
 }
-
-data class Menu(
-        val title: String,
-        val icon: Int
-)
