@@ -9,10 +9,10 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import com.example.launchcontrol.enums.SpaceXEnum
 import com.example.launchcontrol.retrofit.entities.Launches
 import com.example.launchcontrol.retrofit.RetroFitConfig
+import com.example.launchcontrol.utils.Dialog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -89,7 +89,7 @@ class SpaceXActivity : AppCompatActivity() {
                     if(launchYearText.toInt() >= SpaceXEnum.INITIAL_YEAR.year && launchYearText.toInt() < actualYear.toInt()) {
                         launchYearContent = launchYearText
                         getAPIinfo()
-                    } else generateDialog("We don't have any launches' information for this year\n\nD:", "Mismatch year")
+                    } else Dialog("We don't have any launches' information for this year\n\nD:", "Mismatch year", this@SpaceXActivity).show()
                 }
             }
         })
@@ -138,7 +138,7 @@ class SpaceXActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Launches>>?, t: Throwable?) {
                 loading.visibility = View.GONE
-                generateDialog("You may try again later\n\n:)", "API Error")
+                Dialog("You may try again later\n\n:)", "API Error", this@SpaceXActivity).show()
                 Log.e(null, t.toString())
             }
         })
@@ -193,13 +193,4 @@ class SpaceXActivity : AppCompatActivity() {
         }
     }
 
-    private fun generateDialog(message: String, title: String) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-        builder.setMessage(message)
-        builder.setPositiveButton(android.R.string.ok) { dialog, which ->
-            Toast.makeText(applicationContext, android.R.string.ok, Toast.LENGTH_SHORT).show()
-        }
-        builder.show()
-    }
 }
