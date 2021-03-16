@@ -1,6 +1,7 @@
 package com.example.launchcontrol.retrofit.entities
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Payload (
         @SerializedName("payload_type")
@@ -11,4 +12,4 @@ data class Payload (
 
         @SerializedName("orbit")
         val orbit: String
-)
+): Serializable
