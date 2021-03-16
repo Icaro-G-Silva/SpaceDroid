@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.entities.Menu
 import com.example.launchcontrol.recyclerviews.RecyclerViewMenuAdapter
 
+
 class MenuActivity : AppCompatActivity() {
 
     private val menuList: List<Menu> = createMenu()

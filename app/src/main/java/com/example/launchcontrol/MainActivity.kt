@@ -3,7 +3,6 @@ package com.example.launchcontrol
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -15,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     private var title: TextView? = null
     private lateinit var rocketView: ImageView
-    private lateinit var launchBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,19 +21,18 @@ class MainActivity : AppCompatActivity() {
 
         title = findViewById(R.id.title)
         rocketView = findViewById(R.id.rocketGif)
-        launchBtn = findViewById(R.id.launchButton)
 
-        renderTitle("Welcome to the IFC")
+        renderTitle("Liftoff!")
+        Glide.with(this).load(R.drawable.rocket).asGif().into(rocketView)
 
-        launchBtn.setOnClickListener {
-            renderTitle("Liftoff!")
-            Glide.with(this).load(R.drawable.rocket).asGif().into(rocketView)
+        val intent = Intent(this, MenuActivity::class.java)
+        GlobalScope.launch {
+            delay(2800)
+            startActivity(intent)
+        }
 
-            val intent = Intent(this, MenuActivity::class.java)
-            GlobalScope.launch {
-                delay(2800)
-                startActivity(intent)
-            }
+        rocketView.setOnClickListener {
+            startActivity(intent)
         }
     }
 
