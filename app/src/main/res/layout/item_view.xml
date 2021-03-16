@@ -12,13 +12,23 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.3" />
 
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/image_menu"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:src="@drawable/delta_v"
         android:scaleType="fitCenter"
+        android:layout_marginVertical="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +38,7 @@
         android:id="@+id/title_menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="42dp"
         android:gravity="center_horizontal"
         android:text="Delta-V Calculator"
         android:textColor="@android:color/primary_text_dark"

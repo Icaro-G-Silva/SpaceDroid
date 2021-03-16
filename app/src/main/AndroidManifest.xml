@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.LaunchControl">
+        <activity android:name=".SpaceXContentActivity"></activity>
         <activity android:name=".SpaceXActivity" />
         <activity android:name=".TwrActivity" />
         <activity android:name=".DeltaVActivity" />
@@ -17,6 +18,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

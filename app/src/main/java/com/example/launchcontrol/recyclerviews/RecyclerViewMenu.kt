@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
@@ -24,7 +25,9 @@ class RecyclerViewMenuAdapter(val dataSet: List<Menu>): RecyclerView.Adapter<Rec
             val imageIcon: ImageView = itemView.findViewById(R.id.image_menu)
             imageIcon.setImageResource(item.icon)
 
-            itemView.setOnClickListener {
+            val button: Button = itemView.findViewById(R.id.button_menu)
+
+            button.setOnClickListener {
                 startActivity(itemView.context, intent, null)
             }
         }
