@@ -25,6 +25,7 @@ class TwrActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_twr)
 
         userLog = findViewById(R.id.user_log)

@@ -1,8 +1,6 @@
 package com.example.launchcontrol.recyclerviews
 
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.launchcontrol.R
 import com.example.launchcontrol.SpaceXContentActivity
 import com.example.launchcontrol.retrofit.entities.Launches
-import com.google.gson.Gson
 
 class RecyclerViewSpaceXAdapter(private val dataset: List<Launches>): RecyclerView.Adapter<RecyclerViewSpaceXAdapter.SpaceXViewHolder>() {
 

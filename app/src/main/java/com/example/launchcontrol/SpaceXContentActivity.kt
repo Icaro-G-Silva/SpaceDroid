@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.example.launchcontrol.retrofit.entities.Launches
-import com.google.gson.Gson
 
 class SpaceXContentActivity : AppCompatActivity() {
 
@@ -41,6 +40,8 @@ class SpaceXContentActivity : AppCompatActivity() {
         intent.getSerializableExtra("launch")?.let {
             launch = it as Launches
         }
+
+        supportActionBar?.title = "Flight Number ${launch.flightNumber}"
 
         missionName = findViewById(R.id.missionName)
         missionNameContent = findViewById(R.id.missionName_Content)

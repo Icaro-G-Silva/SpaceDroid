@@ -14,6 +14,7 @@ class MenuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.title = "Menu"
         setContentView(R.layout.activity_menu)
 
         val recycler: RecyclerView = findViewById(R.id.recyclerViewMenu)

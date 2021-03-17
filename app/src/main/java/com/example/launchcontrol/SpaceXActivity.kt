@@ -35,6 +35,7 @@ class SpaceXActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_space_x)
 
         launchYear = findViewById(R.id.launchYear)

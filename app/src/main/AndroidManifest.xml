@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.LaunchControl">
-        <activity android:name=".SpaceXContentActivity"></activity>
+        <activity android:name=".SpaceXContentActivity" />
         <activity android:name=".SpaceXActivity" />
         <activity android:name=".TwrActivity" />
         <activity android:name=".DeltaVActivity" />

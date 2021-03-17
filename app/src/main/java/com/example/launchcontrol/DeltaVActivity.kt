@@ -19,6 +19,7 @@ class DeltaVActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_delta_v)
 
         userLog = findViewById(R.id.user_log)
