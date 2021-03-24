@@ -10,7 +10,7 @@ import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.enums.SpaceXEnum
-import com.example.launchcontrol.recyclerviews.RecyclerViewSpaceXAdapter
+import com.example.launchcontrol.lists.recyclerviews.spacex.RecyclerViewSpaceXAdapter
 import com.example.launchcontrol.retrofit.entities.Launches
 import com.example.launchcontrol.retrofit.RetroFitConfig
 import com.example.launchcontrol.utils.Dialog

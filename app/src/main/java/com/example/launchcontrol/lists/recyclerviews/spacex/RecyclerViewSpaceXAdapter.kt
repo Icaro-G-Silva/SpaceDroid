@@ -1,4 +1,4 @@
-package com.example.launchcontrol.recyclerviews
+package com.example.launchcontrol.lists.recyclerviews.spacex
 
 import android.content.Intent
 import android.view.LayoutInflater

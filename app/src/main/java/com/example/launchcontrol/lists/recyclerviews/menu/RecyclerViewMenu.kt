@@ -1,4 +1,4 @@
-package com.example.launchcontrol.recyclerviews
+package com.example.launchcontrol.lists.recyclerviews.menu
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,10 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.launchcontrol.DeltaVActivity
-import com.example.launchcontrol.R
-import com.example.launchcontrol.SpaceXActivity
-import com.example.launchcontrol.TwrActivity
+import com.example.launchcontrol.*
 import com.example.launchcontrol.entities.Menu
 
 class RecyclerViewMenuAdapter(val dataSet: List<Menu>): RecyclerView.Adapter<RecyclerViewMenuAdapter.MenuViewHolder>() {
@@ -43,6 +40,7 @@ class RecyclerViewMenuAdapter(val dataSet: List<Menu>): RecyclerView.Adapter<Rec
             0 -> Intent(holder.itemView.context, DeltaVActivity::class.java)
             1 -> Intent(holder.itemView.context, TwrActivity::class.java)
             2 -> Intent(holder.itemView.context, SpaceXActivity::class.java)
+            3 -> Intent(holder.itemView.context, ISSWikiActivity::class.java)
             else -> Intent()
         }
         holder.bind(dataSet[position], intent)

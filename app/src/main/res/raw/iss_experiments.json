@@ -1,0 +1,148 @@
+{
+    "experiments": [
+        {
+            "title": "Human research",
+            "items": [
+                {
+                    "item": "Effect of prolonged space flight on human skeletal muscle"
+                },
+                {
+                    "item": "Cardiovascular and pulmonary systems"
+                },
+                {
+                    "item": "Crew healthcare systems"
+                },
+                {
+                    "item": "Human behaviour and performance"
+                },
+                {
+                    "item": "Immune system"
+                },
+                {
+                    "item": "Integrated physiology"
+                },
+                {
+                    "item": "Neurological and vestibular systems"
+                },
+                {
+                    "item": "Radiation"
+                },
+                {
+                    "item": "Other experiments"
+                }
+            ]
+        },
+        {
+            "title": "Biology and biotechnology",
+            "items": [
+                {
+                    "item": "Animal biology"
+                },
+                {
+                    "item": "Cellular biology and biotechnology"
+                },
+                {
+                    "item": "Microbiology"
+                },
+                {
+                    "item": "Plant biology"
+                },
+                {
+                    "item": "Protein crystallization"
+                },
+                {
+                    "item": "Other experiments"
+                }
+            ]
+        },
+        {
+            "title": "Physical and materials sciences",
+            "items": [
+                {
+                    "item": "Combustion science"
+                },
+                {
+                    "item": "Fluid physics"
+                },
+                {
+                    "item": "Materials science"
+                },
+                {
+                    "item": "Plant biology"
+                },
+                {
+                    "item": "Other experiments"
+                }
+            ]
+        },
+        {
+            "title": "Technology development",
+            "items": [
+                {
+                    "item": "Characterizing the microgravity environment on ISS"
+                },
+                {
+                    "item": "Environmental monitoring of ISS"
+                },
+                {
+                    "item": "Picosatellites and control technologies"
+                },
+                {
+                    "item": "Spacecraft materials"
+                },
+                {
+                    "item": "Spacecraft systems"
+                },
+                {
+                    "item": "Spacecraft and orbital environments"
+                },
+                {
+                    "item": "Other experiments"
+                }
+            ]
+        },
+        {
+            "title": "Earth and space science",
+            "items": [
+                {
+                    "item": "Earth science"
+                },
+                {
+                    "item": "Space science"
+                },
+                {
+                    "item": "Other monitors and observatories from the field"
+                }
+            ]
+        },
+        {
+            "title": "ISS operations results",
+            "items": [
+                {
+                    "item": "Crew-initiated science"
+                },
+                {
+                    "item": "Educational activities"
+                },
+                {
+                    "item": "Environmental monitoring of ISS"
+                },
+                {
+                    "item": "Medical monitoring of ISS crew members"
+                },
+                {
+                    "item": "Spacecraft systems"
+                },
+                {
+                    "item": "Spacecraft and orbital environments"
+                },
+                {
+                    "item": "Station development test objective"
+                },
+                {
+                    "item": "Supplementary Medical Objective"
+                }
+            ]
+        }
+    ]
+}

@@ -9,4 +9,56 @@
     <string name="orbit">Orbit</string>
     <string name="site_name">Site Name</string>
     <string name="video_link">See the Video</string>
+
+    <string name="title_activity_i_s_s_wiki">ISSWikiActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">ISS Wiki</string>
+    <string name="nav_header_subtitle">International Space Station Wikipedia</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_structure">Structure</string>
+    <string name="menu_science">Science</string>
+    <string name="menu_crew">Crew</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="iss_home_title">General information about the ISS</string>
+    <string name="iss_home_subtitle_purpose">Purpose</string>
+    <string name="iss_home_content_purpose">The ISS was originally intended to be a laboratory, observatory, and factory while providing transportation, maintenance, and a low Earth orbit staging base for possible future missions to the Moon, Mars, and asteroids.</string>
+
+    <string name="iss_home_subtitle_infos">Some useful informations</string>
+
+    <string name="iss_home_list_orbitalvelocity">Orbital Velocity</string>
+    <string name="iss_home_list_orbitalvelocitycontent">7.66 km/s (27,600 km/h; 17,100 mph)</string>
+
+    <string name="iss_home_list_orbitalperiod">Orbital Period</string>
+    <string name="iss_home_list_orbitalperiodcontent">92.68 minutes</string>
+
+    <string name="iss_home_list_orbitsperday">Orbits per Day</string>
+    <string name="iss_home_list_orbitsperdaycontent">15.54</string>
+
+    <string name="iss_home_list_mass">Mass</string>
+    <string name="iss_home_list_masscontent">419,725 kg (925,335 lb)</string>
+
+    <string name="iss_home_list_length">Length</string>
+    <string name="iss_home_list_lengthcontent">73.0 m (239.4 ft)</string>
+
+    <string name="iss_home_list_width">Width</string>
+    <string name="iss_home_list_widthcontent">109.0 m (357.5 ft)</string>
+
+    <string name="iss_home_list_perigee">Perigee</string>
+    <string name="iss_home_list_perigeecontent">417 km (259.1 mi)</string>
+
+    <string name="iss_home_list_apogee">Apogee</string>
+    <string name="iss_home_list_apogeecontent">421 km (261.6 mi)</string>
+
+    <string name="iss_home_list_orbitalinclination">Orbital Inclination</string>
+    <string name="iss_home_list_orbitalinclinationcontent">51.64°</string>
+
+    <string name="iss_struct_title">ISS\'s Structure</string>
+
+    <string name="iss_science_title">ISS\'s Scientific Researches\n(NASA only)</string>
+
 </resources>

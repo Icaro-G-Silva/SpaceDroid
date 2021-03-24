@@ -10,7 +10,7 @@ class Dialog(private val message: String, private val title: String, private val
         builder.setTitle(title)
         builder.setMessage(message)
         builder.setPositiveButton(android.R.string.ok) { dialog, which ->
-            Toast.makeText(context, android.R.string.ok, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, android.R.string.ok, Toast.LENGTH_SHORT).show()
         }
         builder.show()
     }

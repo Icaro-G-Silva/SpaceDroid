@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.entities.Menu
-import com.example.launchcontrol.recyclerviews.RecyclerViewMenuAdapter
+import com.example.launchcontrol.lists.recyclerviews.menu.RecyclerViewMenuAdapter
 
 
 class MenuActivity : AppCompatActivity() {
@@ -29,7 +29,8 @@ class MenuActivity : AppCompatActivity() {
         return arrayListOf(
                 Menu("Delta-V Calculator", R.drawable.delta_v),
                 Menu("TWR Calculator", R.drawable.twr),
-                Menu("SpaceX Launches", R.drawable.spacex_launches)
+                Menu("SpaceX Launches", R.drawable.spacex_launches),
+                Menu("ISS Wiki", R.drawable.iss_icon)
         )
     }
 }

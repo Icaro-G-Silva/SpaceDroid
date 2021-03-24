@@ -1,6 +1,8 @@
 package com.example.launchcontrol.retrofit
 
+import com.example.launchcontrol.retrofit.entities.Launches
 import com.example.launchcontrol.retrofit.services.LaunchesService
+import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
