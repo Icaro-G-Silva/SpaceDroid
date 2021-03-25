@@ -29,9 +29,4 @@
         android:label="@string/menu_crew"
         tools:layout="@layout/fragment_crew" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.launchcontrol.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
 </navigation>

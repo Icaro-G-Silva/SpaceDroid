@@ -20,9 +20,5 @@
             android:id="@+id/nav_crew"
             android:icon="@drawable/crew_icon"
             android:title="@string/menu_crew" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
     </group>
 </menu>

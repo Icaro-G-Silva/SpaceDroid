@@ -8,7 +8,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.R
+import com.example.launchcontrol.lists.recyclerviews.isscrew.RecyclerViewISSCrewAdapter
 
 class CrewFragment: Fragment() {
 
@@ -18,9 +21,16 @@ class CrewFragment: Fragment() {
         crewViewModel = ViewModelProvider(this).get(CrewViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_crew, container, false)
 
-        val textView: TextView = root.findViewById(R.id.text_crew)
-        crewViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = root.findViewById(R.id.iss_crew_title)
+        crewViewModel.title.observe(viewLifecycleOwner, Observer {
             textView.text = it
+        })
+
+        val recyclerView: RecyclerView = root.findViewById(R.id.iss_crew_recycler)
+        crewViewModel.crewList.observe(viewLifecycleOwner, Observer {
+            recyclerView.adapter = RecyclerViewISSCrewAdapter(it)
+            recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            recyclerView.setHasFixedSize(false)
         })
 
         return root

@@ -1,14 +1,33 @@
 package com.example.launchcontrol.ui.crew
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.example.launchcontrol.R
+import com.example.launchcontrol.entities.Menu
+import com.example.launchcontrol.utils.GetStringResource
 
-class CrewViewModel: ViewModel() {
+class CrewViewModel(application: Application) : AndroidViewModel(application) {
+    private val myStr = GetStringResource(application.baseContext)
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is crew fragment"
+    private val _title = MutableLiveData<String>().apply {
+        value = myStr.getStringRes(R.string.iss_crew_title)
     }
-    val text: LiveData<String> = _text
+
+    private val _crewList = MutableLiveData<List<Menu>>().apply {
+        value = arrayListOf(
+            Menu(myStr.getStringRes(R.string.iss_crew_katerubins), R.drawable.kate_rubins),
+            Menu(myStr.getStringRes(R.string.iss_crew_victorglover), R.drawable.victor_glover),
+            Menu(myStr.getStringRes(R.string.iss_crew_soichinoguchi), R.drawable.soichi_noguchi),
+            Menu(myStr.getStringRes(R.string.iss_crew_sergeyryzhikov), R.drawable.sergey),
+            Menu(myStr.getStringRes(R.string.iss_crew_michaelhopkins), R.drawable.michael_hopkins),
+            Menu(myStr.getStringRes(R.string.iss_crew_shannonwalker), R.drawable.shannon_walker),
+            Menu(myStr.getStringRes(R.string.iss_crew_sergeykud), R.drawable.sergey_kud)
+        )
+    }
+
+    val title: LiveData<String> = _title
+    val crewList: LiveData<List<Menu>> = _crewList
 
 }

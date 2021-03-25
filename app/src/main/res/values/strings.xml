@@ -61,4 +61,14 @@
 
     <string name="iss_science_title">ISS\'s Scientific Researches\n(NASA only)</string>
 
+    <string name="iss_crew_title">ISS\'s Actual Crew</string>
+
+    <string name="iss_crew_katerubins">Kate Rubins</string>
+    <string name="iss_crew_victorglover">Victor Glover</string>
+    <string name="iss_crew_soichinoguchi">Soichi Noguchi</string>
+    <string name="iss_crew_sergeyryzhikov">Sergey Ryzhikov</string>
+    <string name="iss_crew_michaelhopkins">Michael Hopkins</string>
+    <string name="iss_crew_shannonwalker">Shannon Walker</string>
+    <string name="iss_crew_sergeykud">Sergey Kud-Sverchkov</string>
+
 </resources>

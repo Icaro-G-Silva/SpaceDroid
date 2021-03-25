@@ -28,7 +28,7 @@ class ISSWikiActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_structure, R.id.nav_science, R.id.nav_crew, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_structure, R.id.nav_science, R.id.nav_crew
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
