@@ -6,31 +6,31 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.entities.Menu
 import com.example.launchcontrol.lists.recyclerviews.menu.RecyclerViewMenuAdapter
-
+import com.example.launchcontrol.utils.GetStringResource
 
 class MenuActivity : AppCompatActivity() {
 
-    private val menuList: List<Menu> = createMenu()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.title = "Menu"
         setContentView(R.layout.activity_menu)
+        val myStr = GetStringResource(this)
+
+        supportActionBar?.title = myStr.getStringRes(R.string.main_menu_title)
+        val menuList: List<Menu> = createMenu(myStr)
 
         val recycler: RecyclerView = findViewById(R.id.recyclerViewMenu)
 
         recycler.adapter = RecyclerViewMenuAdapter(menuList)
-        recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.setHasFixedSize(false)
 
     }
 
-    private fun createMenu(): List<Menu> {
+    private fun createMenu(myStr: GetStringResource): List<Menu> {
         return arrayListOf(
-                Menu("Delta-V Calculator", R.drawable.delta_v),
-                Menu("TWR Calculator", R.drawable.twr),
-                Menu("SpaceX Launches", R.drawable.spacex_launches),
-                Menu("ISS Wiki", R.drawable.iss_icon)
+                Menu(myStr.getStringRes(R.string.main_menu_deltav), R.drawable.delta_v),
+                Menu(myStr.getStringRes(R.string.main_menu_twr), R.drawable.twr),
+                Menu(myStr.getStringRes(R.string.main_menu_spacex), R.drawable.spacex_launches),
+                Menu(myStr.getStringRes(R.string.main_menu_iss), R.drawable.iss_icon)
         )
     }
 }

@@ -47,7 +47,7 @@ class SpaceXActivity : AppCompatActivity() {
 
     private fun renderRecycler() {
         recycler.adapter = RecyclerViewSpaceXAdapter(launches)
-        recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+//        recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.setHasFixedSize(false)
     }
 

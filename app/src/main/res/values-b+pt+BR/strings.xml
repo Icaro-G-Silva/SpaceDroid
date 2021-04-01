@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Space-Droid</string>
+
+    <string name="liftoff">Decolar!</string>
+
+    <string name="main_menu_title">Menu</string>
+    <string name="main_menu_deltav">Calcular Delta-V</string>
+    <string name="main_menu_twr">Calcular TWR</string>
+    <string name="main_menu_spacex">Lançamentos SpaceX</string>
+    <string name="main_menu_iss">ISS Wiki</string>
+
+    <string name="total_mass_kg">Massa total (kg)</string>
+    <string name="dry_mass_kg">Massa seca (kg)</string>
+    <string name="isp_n_s_kg">ISP (N.s/kg)</string>
+    <string name="gravity_m_s">Gravidade (m/s²)</string>
+    <string name="engine_thrust_n">Força do propulsor (N)</string>
+    <string name="engine_amount">Quantidade de propulsores</string>
+
+    <string name="subtract_sign">-</string>
+    <string name="addition_sign">+</string>
+
+    <string name="spacex_minimum_year">Ano mínimo: 2006</string>
+    <string name="launch_year">Ano do lançamento</string>
+    <string name="mission_name">Nome da missão</string>
+    <string name="rocket_name">Nome do foguete</string>
+    <string name="payload_type">Tipo da carga</string>
+    <string name="payload_id">ID da carga</string>
+    <string name="orbit">Órbita</string>
+    <string name="site_name">Nome do local de lançamento</string>
+    <string name="video_link">Veja o vídeo</string>
+
+    <string name="title_activity_i_s_s_wiki">ISSWikiActivity</string>
+    <string name="navigation_drawer_open">Abrir o desenho de navegação</string>
+    <string name="navigation_drawer_close">Fechar o desenho de navegação</string>
+    <string name="nav_header_title">ISS Wiki</string>
+    <string name="nav_header_subtitle">Wikipedia da Estação Espacial Internacional</string>
+    <string name="nav_header_desc">Cabeçalho de navegação</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_structure">Estrutura</string>
+    <string name="menu_science">Ciência</string>
+    <string name="menu_crew">Tripulação</string>
+
+    <string name="iss_home_title">Informações gerais sobre a ISS</string>
+    <string name="iss_home_subtitle_purpose">Propósito</string>
+    <string name="iss_home_content_purpose">A ISS foi originalmente concebida para ser um laboratório, observatório e fábrica, fornecendo transporte, manutenção e uma base de preparação em órbita baixa da Terra para possíveis missões futuras à Lua, Marte e asteróides.</string>
+
+    <string name="iss_home_subtitle_infos">Algumas informações úteis</string>
+
+    <string name="iss_home_list_orbitalvelocity">Velocidade orbital</string>
+    <string name="iss_home_list_orbitalvelocitycontent">7.66 km/s (27,600 km/h; 17,100 mph)</string>
+
+    <string name="iss_home_list_orbitalperiod">Período orbital</string>
+    <string name="iss_home_list_orbitalperiodcontent">92.68 minutos</string>
+
+    <string name="iss_home_list_orbitsperday">Orbitas por dia</string>
+    <string name="iss_home_list_orbitsperdaycontent">15.54</string>
+
+    <string name="iss_home_list_mass">Massa</string>
+    <string name="iss_home_list_masscontent">419,725 kg (925,335 lb)</string>
+
+    <string name="iss_home_list_length">Comprimento</string>
+    <string name="iss_home_list_lengthcontent">73.0 m (239.4 ft)</string>
+
+    <string name="iss_home_list_width">Largura</string>
+    <string name="iss_home_list_widthcontent">109.0 m (357.5 ft)</string>
+
+    <string name="iss_home_list_perigee">Perigeu</string>
+    <string name="iss_home_list_perigeecontent">417 km (259.1 mi)</string>
+
+    <string name="iss_home_list_apogee">Apogeu</string>
+    <string name="iss_home_list_apogeecontent">421 km (261.6 mi)</string>
+
+    <string name="iss_home_list_orbitalinclination">Inclinação orbital</string>
+    <string name="iss_home_list_orbitalinclinationcontent">51.64°</string>
+
+    <string name="iss_struct_title">Estrutura da ISS</string>
+
+    <string name="iss_science_title">Pesquisas científicas da ISS\n(somente NASA)</string>
+
+    <string name="iss_crew_title">Tripulação atual da ISS</string>
+    <string name="iss_crew_katerubins">Kate Rubins</string>
+    <string name="iss_crew_victorglover">Victor Glover</string>
+    <string name="iss_crew_soichinoguchi">Soichi Noguchi</string>
+    <string name="iss_crew_sergeyryzhikov">Sergey Ryzhikov</string>
+    <string name="iss_crew_michaelhopkins">Michael Hopkins</string>
+    <string name="iss_crew_shannonwalker">Shannon Walker</string>
+    <string name="iss_crew_sergeykud">Sergey Kud-Sverchkov</string>
+
+</resources>

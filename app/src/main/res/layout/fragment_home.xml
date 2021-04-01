@@ -21,8 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <TextView
         android:id="@+id/iss_home_subtitle_purpose"
         android:layout_width="0dp"

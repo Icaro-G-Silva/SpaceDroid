@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.launchcontrol.utils.GetStringResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         title = findViewById(R.id.title)
         rocketView = findViewById(R.id.rocketGif)
 
-        renderTitle("Liftoff!")
+        renderTitle(GetStringResource(this).getStringRes(R.string.liftoff))
         Glide.with(this).load(R.drawable.rocket).asGif().into(rocketView)
 
         val intent = Intent(this, MenuActivity::class.java)

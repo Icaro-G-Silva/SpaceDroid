@@ -28,7 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Total Mass (kg)"
+        android:text="@string/total_mass_kg"
         android:textSize="28sp"
         android:textColor="@android:color/primary_text_dark"
         android:gravity="center_horizontal"
@@ -59,7 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Dry Mass (kg)"
+        android:text="@string/dry_mass_kg"
         android:textSize="28sp"
         android:textColor="@android:color/primary_text_dark"
         android:gravity="center_horizontal"
@@ -90,7 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="ISP (N.s/kg)"
+        android:text="@string/isp_n_s_kg"
         android:textSize="28sp"
         android:textColor="@android:color/primary_text_dark"
         android:gravity="center_horizontal"
@@ -121,7 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Gravity (m/s²)"
+        android:text="@string/gravity_m_s"
         android:textSize="28sp"
         android:textColor="@android:color/primary_text_dark"
         android:gravity="center_horizontal"
@@ -144,21 +144,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/gravity_label" />
-
-
-<!--    <Button-->
-<!--        android:id="@+id/calculate_button"-->
-<!--        android:layout_width="250dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:backgroundTint="@color/buttons"-->
-<!--        android:text="Calculate Delta-V"-->
-<!--        android:textSize="18sp"-->
-<!--        android:layout_marginVertical="26dp"-->
-<!--        app:strokeColor="#051425"-->
-<!--        app:strokeWidth="1.5dp"-->
-<!--        app:cornerRadius="8dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

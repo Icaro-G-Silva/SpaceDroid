@@ -1,6 +1,25 @@
 <resources>
     <string name="app_name">Space-Droid</string>
 
+    <string name="liftoff">Liftoff!</string>
+
+    <string name="main_menu_title">Menu</string>
+    <string name="main_menu_deltav">Delta-V Calculator</string>
+    <string name="main_menu_twr">TWR Calculator</string>
+    <string name="main_menu_spacex">SpaceX Launches</string>
+    <string name="main_menu_iss">ISS Wiki</string>
+
+    <string name="total_mass_kg">Total Mass (kg)</string>
+    <string name="dry_mass_kg">Dry Mass (kg)</string>
+    <string name="isp_n_s_kg">ISP (N.s/kg)</string>
+    <string name="gravity_m_s">Gravity (m/s²)</string>
+    <string name="engine_thrust_n">Engine Thrust (N)</string>
+    <string name="engine_amount">Engine Amount</string>
+
+    <string name="subtract_sign">-</string>
+    <string name="addition_sign">+</string>
+
+    <string name="spacex_minimum_year">Minimum year: 2006</string>
     <string name="launch_year">Launch year</string>
     <string name="mission_name">Mission Name</string>
     <string name="rocket_name">Rocket Name</string>
@@ -22,7 +41,6 @@
     <string name="menu_structure">Structure</string>
     <string name="menu_science">Science</string>
     <string name="menu_crew">Crew</string>
-    <string name="menu_slideshow">Slideshow</string>
 
     <string name="iss_home_title">General information about the ISS</string>
     <string name="iss_home_subtitle_purpose">Purpose</string>
@@ -62,7 +80,6 @@
     <string name="iss_science_title">ISS\'s Scientific Researches\n(NASA only)</string>
 
     <string name="iss_crew_title">ISS\'s Actual Crew</string>
-
     <string name="iss_crew_katerubins">Kate Rubins</string>
     <string name="iss_crew_victorglover">Victor Glover</string>
     <string name="iss_crew_soichinoguchi">Soichi Noguchi</string>
