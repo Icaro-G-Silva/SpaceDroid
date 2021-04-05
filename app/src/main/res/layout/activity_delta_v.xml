@@ -1,148 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DeltaVActivity"
-    android:background="@color/lighter_background">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/user_log"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/total_mass_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Please, fill all the fields below" />
+        android:background="@color/lighter_background"
+        tools:context=".deltav.DeltaVActivity">
 
-    <!-- SEPARATOR -->
+        <TextView
+            android:id="@+id/user_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/total_mass_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Please, fill all the fields below" />
 
-    <TextView
-        android:id="@+id/total_mass_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/total_mass_kg"
-        android:textSize="28sp"
-        android:textColor="@android:color/primary_text_dark"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/user_log"
-        app:layout_constraintBottom_toTopOf="@id/total_mass" />
+        <!-- SEPARATOR -->
 
-    <EditText
-        android:id="@+id/total_mass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:inputType="number"
-        android:maxLength="6"
-        android:singleLine="true"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="24sp"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/total_mass_label" />
+        <TextView
+            android:id="@+id/total_mass_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="@string/total_mass_kg"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@id/total_mass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_log" />
 
-    <!-- SEPARATOR -->
+        <EditText
+            android:id="@+id/total_mass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/total_mass_label" />
 
-    <TextView
-        android:id="@+id/dry_mass_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/dry_mass_kg"
-        android:textSize="28sp"
-        android:textColor="@android:color/primary_text_dark"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/total_mass"
-        app:layout_constraintBottom_toTopOf="@id/dry_mass" />
+        <!-- SEPARATOR -->
 
-    <EditText
-        android:id="@+id/dry_mass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:inputType="number"
-        android:maxLength="6"
-        android:singleLine="true"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="24sp"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/dry_mass_label" />
+        <TextView
+            android:id="@+id/dry_mass_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="@string/dry_mass_kg"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@id/dry_mass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/total_mass" />
 
-    <!-- SEPARATOR -->
+        <EditText
+            android:id="@+id/dry_mass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dry_mass_label" />
 
-    <TextView
-        android:id="@+id/isp_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/isp_n_s_kg"
-        android:textSize="28sp"
-        android:textColor="@android:color/primary_text_dark"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/dry_mass"
-        app:layout_constraintBottom_toTopOf="@id/isp" />
+        <!-- SEPARATOR -->
 
-    <EditText
-        android:id="@+id/isp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:inputType="numberDecimal"
-        android:maxLength="6"
-        android:singleLine="true"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="24sp"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/isp_label" />
+        <TextView
+            android:id="@+id/isp_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="@string/isp_n_s_kg"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@id/isp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dry_mass" />
 
-    <!-- SEPARATOR -->
+        <EditText
+            android:id="@+id/isp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/isp_label" />
 
-    <TextView
-        android:id="@+id/gravity_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/gravity_m_s"
-        android:textSize="28sp"
-        android:textColor="@android:color/primary_text_dark"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/isp"
-        app:layout_constraintBottom_toTopOf="@id/gravity" />
+        <!-- SEPARATOR -->
 
-    <EditText
-        android:id="@+id/gravity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:inputType="numberDecimal"
-        android:maxLength="6"
-        android:singleLine="true"
-        android:textColor="@android:color/primary_text_dark"
-        android:textSize="24sp"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/gravity_label" />
+        <TextView
+            android:id="@+id/gravity_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="@string/gravity_m_s"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@id/gravity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/isp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/gravity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_horizontal"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gravity_label" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

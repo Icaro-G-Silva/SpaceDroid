@@ -15,6 +15,11 @@
     <string name="gravity_m_s">Gravity (m/s²)</string>
     <string name="engine_thrust_n">Engine Thrust (N)</string>
     <string name="engine_amount">Engine Amount</string>
+    <string name="message_zero">Any field can be zero</string>
+    <string name="message_less_than_zero">\'Total Mass\' can\'t be less than \'Dry Mass\'</string>
+    <string name="message_deltav" formatted="false">ΔV = %s</string>
+    <string name="message_empty_field">Please, fill all the fields below</string>
+    <string name="message_default">Please, fill all the fields below</string>
 
     <string name="subtract_sign">-</string>
     <string name="addition_sign">+</string>

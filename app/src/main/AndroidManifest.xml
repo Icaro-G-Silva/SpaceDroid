@@ -17,7 +17,7 @@
         <activity android:name=".SpaceXContentActivity" />
         <activity android:name=".SpaceXActivity" />
         <activity android:name=".TwrActivity" />
-        <activity android:name=".DeltaVActivity" />
+        <activity android:name=".deltav.DeltaVActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.*
+import com.example.launchcontrol.deltav.DeltaVActivity
 import com.example.launchcontrol.entities.Menu
 
 class RecyclerViewMenuAdapter(val dataSet: List<Menu>): RecyclerView.Adapter<RecyclerViewMenuAdapter.MenuViewHolder>() {
