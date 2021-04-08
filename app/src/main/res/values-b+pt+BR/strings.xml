@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Space-Droid</string>
+    <string name="app_name">Space Droid</string>
 
     <string name="liftoff">Decolar!</string>
 
@@ -15,11 +15,22 @@
     <string name="gravity_m_s">Gravidade (m/s²)</string>
     <string name="engine_thrust_n">Força do propulsor (N)</string>
     <string name="engine_amount">Quantidade de propulsores</string>
+    <string name="message_zero">Nenhum campo pode ser 0</string>
+    <string name="message_less_than_zero">A \'Massa total\' não pode ser menor que a \'Massa seca\'</string>
+    <string name="message_empty_field">Por favor, preencha todos os campos abaixo</string>
+    <string name="message_deltav" formatted="false">ΔV = %s</string>
+    <string name="message_twr" formatted="false">TWR = %s</string>
 
     <string name="subtract_sign">-</string>
     <string name="addition_sign">+</string>
 
+    <string name="api_generics_error_title">Erro na API</string>
+    <string name="api_generics_error_message">Tente novamente mais tarde\n\n:)</string>
+
+    <string name="mismatch_year_error_message">Não temos nenhuma informação de lançamento para este ano\n\nD:</string>
+    <string name="mismatch_year_error_title">Ano incompativel</string>
     <string name="spacex_minimum_year">Ano mínimo: 2006</string>
+    <string name="flight_number" formatted="false">Número do lançamento %s</string>
     <string name="launch_year">Ano do lançamento</string>
     <string name="mission_name">Nome da missão</string>
     <string name="rocket_name">Nome do foguete</string>

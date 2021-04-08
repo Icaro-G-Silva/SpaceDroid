@@ -1,4 +1,4 @@
-package com.example.launchcontrol.ui.crew
+package com.example.launchcontrol.isswiki.iss_sections.crew
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -11,8 +11,8 @@ import com.example.launchcontrol.utils.GetStringResource
 class CrewViewModel(application: Application) : AndroidViewModel(application) {
     private val myStr = GetStringResource(application.baseContext)
 
-    private val _title = MutableLiveData<String>().apply {
-        value = myStr.getStringRes(R.string.iss_crew_title)
+    private val _title = MutableLiveData<Int>().apply {
+        value = R.string.iss_crew_title
     }
 
     private val _crewList = MutableLiveData<List<Menu>>().apply {
@@ -27,7 +27,6 @@ class CrewViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
-    val title: LiveData<String> = _title
+    val title: LiveData<Int> = _title
     val crewList: LiveData<List<Menu>> = _crewList
-
 }

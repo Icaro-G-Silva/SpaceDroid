@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.launchcontrol">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_rocket"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.LaunchControl">
         <activity
-            android:name=".ISSWikiActivity"
+            android:name=".isswiki.ISSWikiActivity"
             android:label="@string/title_activity_i_s_s_wiki"
-            android:theme="@style/Theme.LaunchControl.NoActionBar"></activity>
-        <activity android:name=".SpaceXContentActivity" />
-        <activity android:name=".SpaceXActivity" />
-        <activity android:name=".TwrActivity" />
+            android:theme="@style/Theme.LaunchControl.NoActionBar" />
+        <activity android:name=".spacex.ui.SpaceXContentActivity" />
+        <activity android:name=".spacex.ui.SpaceXActivity" />
+        <activity android:name=".twr.TwrActivity" />
         <activity android:name=".deltav.DeltaVActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".menu.MenuActivity" />
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

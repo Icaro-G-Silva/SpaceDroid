@@ -1,4 +1,4 @@
-package com.example.launchcontrol
+package com.example.launchcontrol.isswiki
 
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
@@ -10,9 +10,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.launchcontrol.R
 
 class ISSWikiActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,10 @@ class ISSWikiActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_structure, R.id.nav_science, R.id.nav_crew
+                R.id.nav_home,
+                R.id.nav_structure,
+                R.id.nav_science,
+                R.id.nav_crew
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

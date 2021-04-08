@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.*
 import com.example.launchcontrol.deltav.DeltaVActivity
 import com.example.launchcontrol.entities.Menu
+import com.example.launchcontrol.isswiki.ISSWikiActivity
+import com.example.launchcontrol.spacex.ui.SpaceXActivity
+import com.example.launchcontrol.twr.TwrActivity
 
 class RecyclerViewMenuAdapter(val dataSet: List<Menu>): RecyclerView.Adapter<RecyclerViewMenuAdapter.MenuViewHolder>() {
 

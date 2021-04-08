@@ -1,3 +1,4 @@
+@file:Suppress("NAME_SHADOWING")
 package com.example.launchcontrol.deltav
 
 import com.example.launchcontrol.R
@@ -6,7 +7,7 @@ import kotlin.math.ln
 class DeltaVPresenter(private val activity: IDeltaVContract.IDeltaVActivity): IDeltaVContract.IDeltaVPresenter {
 
     override fun initialize() {
-        activity.displayMessage(R.string.message_default)
+        activity.displayMessage(R.string.message_empty_field)
     }
 
     override fun calculate(totalMass: String,

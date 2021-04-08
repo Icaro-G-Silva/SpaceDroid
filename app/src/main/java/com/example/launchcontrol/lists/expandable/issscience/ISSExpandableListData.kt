@@ -1,6 +1,6 @@
 package com.example.launchcontrol.lists.expandable.issscience
 
-import com.example.launchcontrol.utils.ISSlist
+import com.example.launchcontrol.entities.jsonentities.ISSlist
 
 class ISSExpandableListData(private val ISSlistData: ISSlist) {
     fun getData(): HashMap<String, List<String>> {

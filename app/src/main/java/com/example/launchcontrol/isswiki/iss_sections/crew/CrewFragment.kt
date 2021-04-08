@@ -1,4 +1,4 @@
-package com.example.launchcontrol.ui.crew
+package com.example.launchcontrol.isswiki.iss_sections.crew
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,14 +23,14 @@ class CrewFragment: Fragment() {
 
         val textView: TextView = root.findViewById(R.id.iss_crew_title)
         crewViewModel.title.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            textView.text = getString(it)
         })
 
         val recyclerView: RecyclerView = root.findViewById(R.id.iss_crew_recycler)
         crewViewModel.crewList.observe(viewLifecycleOwner, Observer {
             recyclerView.adapter = RecyclerViewISSCrewAdapter(it)
             recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            recyclerView.setHasFixedSize(false)
+            recyclerView.setHasFixedSize(true)
         })
 
         return root

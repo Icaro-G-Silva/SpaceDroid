@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Space-Droid</string>
+    <string name="app_name">Space Droid</string>
 
     <string name="liftoff">Liftoff!</string>
 
@@ -15,16 +15,22 @@
     <string name="gravity_m_s">Gravity (m/s²)</string>
     <string name="engine_thrust_n">Engine Thrust (N)</string>
     <string name="engine_amount">Engine Amount</string>
-    <string name="message_zero">Any field can be zero</string>
+    <string name="message_zero">No fields can be zero</string>
     <string name="message_less_than_zero">\'Total Mass\' can\'t be less than \'Dry Mass\'</string>
-    <string name="message_deltav" formatted="false">ΔV = %s</string>
     <string name="message_empty_field">Please, fill all the fields below</string>
-    <string name="message_default">Please, fill all the fields below</string>
+    <string name="message_deltav" formatted="false">ΔV = %s</string>
+    <string name="message_twr" formatted="false">TWR = %s</string>
 
     <string name="subtract_sign">-</string>
     <string name="addition_sign">+</string>
 
+    <string name="api_generics_error_title">API Error</string>
+    <string name="api_generics_error_message">You may try again later\n\n:)</string>
+
+    <string name="mismatch_year_error_message">We don\'t have any launches\' information for this year\n\nD:</string>
+    <string name="mismatch_year_error_title">Mismatch year</string>
     <string name="spacex_minimum_year">Minimum year: 2006</string>
+    <string name="flight_number" formatted="false">Flight number %s</string>
     <string name="launch_year">Launch year</string>
     <string name="mission_name">Mission Name</string>
     <string name="rocket_name">Rocket Name</string>

@@ -1,9 +1,8 @@
 package com.example.launchcontrol.utils
 
 import android.content.Context
-import android.util.Log
+import com.example.launchcontrol.entities.jsonentities.ISSlist
 import com.google.gson.Gson
-import com.google.gson.annotations.SerializedName
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
@@ -32,27 +31,6 @@ class JsonReader(private val file: Int, val context: Context) {
                 throw RuntimeException(e)
             }
         }
-
-        Log.d(null, stringBuilder.toString())
-
         return Gson().fromJson<ISSlist>(stringBuilder.toString(), ISSlist::class.java)
     }
 }
-
-data class ISSlist(
-        @SerializedName("experiments")
-        val experiments: List<ISSitem>
-)
-
-data class ISSitem(
-        @SerializedName("title")
-        val title: String,
-
-        @SerializedName("items")
-        val items: List<ISSitemContent>
-)
-
-data class ISSitemContent(
-        @SerializedName("item")
-        val item: String
-)

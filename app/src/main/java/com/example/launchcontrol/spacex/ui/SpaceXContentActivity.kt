@@ -1,4 +1,4 @@
-package com.example.launchcontrol
+package com.example.launchcontrol.spacex.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.example.launchcontrol.R
 import com.example.launchcontrol.retrofit.entities.Launches
 
 class SpaceXContentActivity : AppCompatActivity() {
-
     private lateinit var missionName: TextView
     private lateinit var missionNameContent: TextView
 
@@ -41,7 +41,7 @@ class SpaceXContentActivity : AppCompatActivity() {
             launch = it as Launches
         }
 
-        supportActionBar?.title = "Flight Number ${launch.flightNumber}"
+        supportActionBar?.title = getString(R.string.flight_number, launch.flightNumber)
 
         missionName = findViewById(R.id.missionName)
         missionNameContent = findViewById(R.id.missionName_Content)
@@ -60,13 +60,6 @@ class SpaceXContentActivity : AppCompatActivity() {
         renderLaunch(launch)
     }
 
-    private fun generateLinkButtonListener(link: String) {
-        videoLink.setOnClickListener {
-            val videoIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
-            startActivity(videoIntent)
-        }
-    }
-
     private fun renderLaunch(launch: Launches) {
         missionNameContent.text = launch.missionName
         rocketNameContent.text = launch.rocket.rocketName
@@ -80,6 +73,13 @@ class SpaceXContentActivity : AppCompatActivity() {
             val videoLinkContent: String = link
             videoLink.visibility = View.VISIBLE
             generateLinkButtonListener(videoLinkContent)
+        }
+    }
+
+    private fun generateLinkButtonListener(link: String) {
+        videoLink.setOnClickListener {
+            val videoIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+            startActivity(videoIntent)
         }
     }
 }

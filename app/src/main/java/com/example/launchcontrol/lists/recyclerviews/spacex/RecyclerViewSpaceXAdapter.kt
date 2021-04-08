@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.launchcontrol.R
-import com.example.launchcontrol.SpaceXContentActivity
+import com.example.launchcontrol.spacex.ui.SpaceXContentActivity
 import com.example.launchcontrol.retrofit.entities.Launches
 
 class RecyclerViewSpaceXAdapter(private val dataset: List<Launches>): RecyclerView.Adapter<RecyclerViewSpaceXAdapter.SpaceXViewHolder>() {

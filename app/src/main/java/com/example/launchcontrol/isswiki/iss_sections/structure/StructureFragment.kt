@@ -1,4 +1,4 @@
-package com.example.launchcontrol.ui.structure
+package com.example.launchcontrol.isswiki.iss_sections.structure
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,7 +19,7 @@ class StructureFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_structure, container, false)
         val textView: TextView = root.findViewById(R.id.iss_struct_title)
         structureViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            textView.text = getString(it)
         })
         return root
     }

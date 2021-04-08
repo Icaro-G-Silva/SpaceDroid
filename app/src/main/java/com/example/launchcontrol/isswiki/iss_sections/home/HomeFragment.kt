@@ -1,4 +1,4 @@
-package com.example.launchcontrol.ui.home
+package com.example.launchcontrol.isswiki.iss_sections.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,21 +32,21 @@ class HomeFragment : Fragment() {
         val recyclerViewList: RecyclerView = root.findViewById(R.id.iss_home_recyclerViewList)
 
         homeViewModel.title.observe(viewLifecycleOwner, Observer {
-            title.text = it
+            title.text = getString(it)
         })
         homeViewModel.subtitlePurpose.observe(viewLifecycleOwner, Observer {
-            subtitlePurpose.text = it
+            subtitlePurpose.text = getString(it)
         })
         homeViewModel.purposeContent.observe(viewLifecycleOwner, Observer {
-            contentPurpose.text = it
+            contentPurpose.text = getString(it)
         })
         homeViewModel.subtitleInfos.observe(viewLifecycleOwner, Observer {
-            subtitleInfos.text = it
+            subtitleInfos.text = getString(it)
         })
         homeViewModel.listItems.observe(viewLifecycleOwner, Observer {
             recyclerViewList.adapter = RecyclerViewISSHomeAdapter(it)
             recyclerViewList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            recyclerViewList.setHasFixedSize(false)
+            recyclerViewList.setHasFixedSize(true)
         })
 
         return root

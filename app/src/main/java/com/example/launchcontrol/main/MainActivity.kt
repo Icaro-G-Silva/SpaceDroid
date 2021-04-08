@@ -1,4 +1,4 @@
-package com.example.launchcontrol
+package com.example.launchcontrol.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.example.launchcontrol.utils.GetStringResource
+import com.example.launchcontrol.menu.MenuActivity
+import com.example.launchcontrol.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
-    private var title: TextView? = null
+    private lateinit var title: TextView
     private lateinit var rocketView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         title = findViewById(R.id.title)
         rocketView = findViewById(R.id.rocketGif)
 
-        renderTitle(GetStringResource(this).getStringRes(R.string.liftoff))
+        renderTitle(getString(R.string.liftoff))
         Glide.with(this).load(R.drawable.rocket).asGif().into(rocketView)
 
         val intent = Intent(this, MenuActivity::class.java)
@@ -39,6 +39,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun renderTitle(titleText: String) {
-        title?.text = titleText
+        title.text = titleText
     }
 }

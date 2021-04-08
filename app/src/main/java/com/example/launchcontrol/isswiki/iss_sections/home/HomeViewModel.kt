@@ -1,4 +1,4 @@
-package com.example.launchcontrol.ui.home
+package com.example.launchcontrol.isswiki.iss_sections.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,23 +9,22 @@ import com.example.launchcontrol.entities.ListText
 import com.example.launchcontrol.utils.GetStringResource
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
-
     private val myStr = GetStringResource(application.baseContext)
 
-    private val _title = MutableLiveData<String>().apply {
-        value = myStr.getStringRes(R.string.iss_home_title)
+    private val _title = MutableLiveData<Int>().apply {
+        value = R.string.iss_home_title
     }
 
-    private val _subtitlePurpose = MutableLiveData<String>().apply {
-        value = myStr.getStringRes(R.string.iss_home_subtitle_purpose)
+    private val _subtitlePurpose = MutableLiveData<Int>().apply {
+        value = R.string.iss_home_subtitle_purpose
     }
 
-    private val _purposeContent = MutableLiveData<String>().apply {
-        value = myStr.getStringRes(R.string.iss_home_content_purpose)
+    private val _purposeContent = MutableLiveData<Int>().apply {
+        value = R.string.iss_home_content_purpose
     }
 
-    private val _subtitleInfos = MutableLiveData<String>().apply {
-        value = myStr.getStringRes(R.string.iss_home_subtitle_infos)
+    private val _subtitleInfos = MutableLiveData<Int>().apply {
+        value = R.string.iss_home_subtitle_infos
     }
 
     private val _list = MutableLiveData<List<ListText>>().apply {
@@ -42,9 +41,9 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
-    val title: LiveData<String> = _title
-    val subtitlePurpose: LiveData<String> = _subtitlePurpose
-    val purposeContent: LiveData<String> = _purposeContent
-    val subtitleInfos: LiveData<String> = _subtitleInfos
+    val title: LiveData<Int> = _title
+    val subtitlePurpose: LiveData<Int> = _subtitlePurpose
+    val purposeContent: LiveData<Int> = _purposeContent
+    val subtitleInfos: LiveData<Int> = _subtitleInfos
     val listItems: LiveData<List<ListText>> = _list
 }

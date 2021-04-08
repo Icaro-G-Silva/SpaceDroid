@@ -1,23 +1,21 @@
-package com.example.launchcontrol.ui.science
+package com.example.launchcontrol.isswiki.iss_sections.science
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.ExpandableListView
-import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.launchcontrol.R
+import com.example.launchcontrol.entities.jsonentities.ISSlist
 import com.example.launchcontrol.lists.expandable.issscience.ISSExpandableListAdapter
 import com.example.launchcontrol.lists.expandable.issscience.ISSExpandableListData
 import com.example.launchcontrol.utils.Dialog
-import com.example.launchcontrol.utils.ISSlist
 import com.example.launchcontrol.utils.JsonReader
 
 class ScienceFragment: Fragment() {
@@ -36,7 +34,7 @@ class ScienceFragment: Fragment() {
 
         val textView: TextView = root.findViewById(R.id.iss_science_title)
         scienceViewModel.title.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            textView.text = getString(it)
         })
 
         return root
