@@ -1,10 +1,11 @@
-package com.example.launchcontrol.spacex.presenter
+package com.example.launchcontrol.spacex.ui.presenter
 
 import android.annotation.SuppressLint
 import com.example.launchcontrol.R
 import com.example.launchcontrol.enums.SpaceXEnum
 import com.example.launchcontrol.retrofit.RetroFitConfig
 import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.spacex.data.LaunchesRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,7 +14,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class SpaceXPresenter(private val activity: ISpaceXContract.ISpaceXActivity): ISpaceXContract.ISpaceXPresenter {
-    private var contentVisibility: Boolean = false
 
     private val yearPattern: String = SpaceXEnum.YearPattern.YEAR_PATTERN.yearPattern
     private val initialYear: Int = SpaceXEnum.InitialYear.INITIAL_YEAR.year
@@ -36,13 +36,13 @@ class SpaceXPresenter(private val activity: ISpaceXContract.ISpaceXActivity): IS
         }
     }
 
-    override fun getAPIinfo() {
-        toggleRequestVisibility()
-        val call: Call<List<Launches>> = RetroFitConfig().getLaunchesService().getLaunches(launchYearContent)
-        call.enqueue(object: Callback<List<Launches>> {
+    fun getAPIinfo() {
+        toggleRequestVisibility(false)
+        val launchRepository = LaunchesRepository()
+        launchRepository.getLaunches(object: Callback<List<Launches>> {
             override fun onResponse(call: Call<List<Launches>>?, response: Response<List<Launches>>?) {
                 if(response?.isSuccessful!!) {
-                    toggleRequestVisibility()
+                    toggleRequestVisibility(true)
                     launches.clear()
                     response.body().forEach { launch -> launches.add(launch) }
                     renderRecyclerTrigger()
@@ -53,15 +53,14 @@ class SpaceXPresenter(private val activity: ISpaceXContract.ISpaceXActivity): IS
                 activity.setLoadingInvisible()
                 activity.showDialog(R.string.api_generics_error_message, R.string.api_generics_error_title)
             }
-        })
+        }, launchYearContent)
     }
 
-    override fun toggleRequestVisibility() {
+    fun toggleRequestVisibility(contentVisibility: Boolean) {
         if(contentVisibility) activity.setContentVisible() else activity.setContentInvisible()
-        contentVisibility = !contentVisibility
     }
 
-    override fun renderRecyclerTrigger() {
+    fun renderRecyclerTrigger() {
         activity.renderRecycler(launches)
     }
 

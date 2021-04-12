@@ -1,13 +1,10 @@
-package com.example.launchcontrol.spacex.presenter
+package com.example.launchcontrol.spacex.ui.presenter
 
 import com.example.launchcontrol.retrofit.entities.Launches
 
 interface ISpaceXContract {
     interface ISpaceXPresenter {
         fun launchYearListener(launchYearText: String)
-        fun getAPIinfo()
-        fun toggleRequestVisibility()
-        fun renderRecyclerTrigger()
     }
     interface ISpaceXActivity {
         fun setContentVisible()

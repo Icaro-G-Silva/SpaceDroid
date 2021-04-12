@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.R
 import com.example.launchcontrol.lists.recyclerviews.spacex.RecyclerViewSpaceXAdapter
 import com.example.launchcontrol.retrofit.entities.Launches
-import com.example.launchcontrol.spacex.presenter.ISpaceXContract
-import com.example.launchcontrol.spacex.presenter.SpaceXPresenter
+import com.example.launchcontrol.spacex.ui.presenter.ISpaceXContract
+import com.example.launchcontrol.spacex.ui.presenter.SpaceXPresenter
 import com.example.launchcontrol.utils.Dialog
 
 class SpaceXActivity : AppCompatActivity(), ISpaceXContract.ISpaceXActivity {
