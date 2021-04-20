@@ -5,6 +5,7 @@ import com.example.launchcontrol.retrofit.entities.Launches
 interface ISpaceXContract {
     interface ISpaceXPresenter {
         fun launchYearListener(launchYearText: String)
+        fun destroy()
     }
     interface ISpaceXActivity {
         fun setContentVisible()

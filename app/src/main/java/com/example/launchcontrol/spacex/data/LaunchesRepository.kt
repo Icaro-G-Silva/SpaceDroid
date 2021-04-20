@@ -1,15 +1,25 @@
 package com.example.launchcontrol.spacex.data
 
-import com.example.launchcontrol.retrofit.RetroFitConfig
+import android.util.Log
 import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.retrofit.services.LaunchesService
+import com.example.launchcontrol.utils.SharedPreferencesReduced
 import retrofit2.Call
 import retrofit2.Callback
 
-class LaunchesRepository {
+class LaunchesRepository(private val sharedPreferences: SharedPreferencesReduced, private val retrofit: LaunchesService) {
 
     fun getLaunches(callback: Callback<List<Launches>>, launchYearContent: String) {
-        val call: Call<List<Launches>> = RetroFitConfig().getLaunchesService().getLaunches(launchYearContent)
+        val launchYearPref = getLaunchYearOfPref(launchYearContent)
+        if(launchYearPref.isEmpty()) {
+            setLaunchYearOnPref(launchYearContent)
+        } else {
+            Log.d("Year already searched", launchYearPref)
+        }
+        val call: Call<List<Launches>> = retrofit.getLaunches(launchYearContent)
         call.enqueue(callback)
     }
 
+    private fun setLaunchYearOnPref(launchYear: String) = sharedPreferences.setPreference(launchYear, launchYear)
+    private fun getLaunchYearOfPref(launchYear: String): String = sharedPreferences.getPreference(launchYear, "")
 }

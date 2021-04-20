@@ -1,19 +1,17 @@
 package com.example.launchcontrol.utils
 
 import android.content.Context
-import com.example.launchcontrol.entities.jsonentities.ISSlist
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
-import java.lang.RuntimeException
 
-class JsonReader(private val file: Int, val context: Context) {
-    
-    private val inputStream: InputStream = context.resources.openRawResource(file)
+class JsonReader(private val context: Context) {
+    @Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
+    inline fun <reified T> read(file: Int): T {
+        val inputStream: InputStream = context.resources.openRawResource(file)
 
-    fun read(): ISSlist {
         val reader = BufferedReader(InputStreamReader(inputStream))
         val stringBuilder = StringBuilder()
 
@@ -31,6 +29,7 @@ class JsonReader(private val file: Int, val context: Context) {
                 throw RuntimeException(e)
             }
         }
-        return Gson().fromJson<ISSlist>(stringBuilder.toString(), ISSlist::class.java)
+
+        return Gson().fromJson<T>(stringBuilder.toString(), T::class.java)
     }
 }

@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.example.launchcontrol.utils.Zoom
         android:id="@+id/iss_crew_banner"
         android:layout_width="0dp"
         android:layout_height="235dp"

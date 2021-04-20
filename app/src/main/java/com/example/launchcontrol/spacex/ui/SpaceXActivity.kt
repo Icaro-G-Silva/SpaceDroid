@@ -11,15 +11,16 @@ import com.example.launchcontrol.R
 import com.example.launchcontrol.lists.recyclerviews.spacex.RecyclerViewSpaceXAdapter
 import com.example.launchcontrol.retrofit.entities.Launches
 import com.example.launchcontrol.spacex.ui.presenter.ISpaceXContract
-import com.example.launchcontrol.spacex.ui.presenter.SpaceXPresenter
 import com.example.launchcontrol.utils.Dialog
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class SpaceXActivity : AppCompatActivity(), ISpaceXContract.ISpaceXActivity {
     private lateinit var recycler: RecyclerView
     private lateinit var loading: ProgressBar
     private lateinit var launchYear: EditText
 
-    private var presenter: ISpaceXContract.ISpaceXPresenter? = SpaceXPresenter(this)
+    private val presenter: ISpaceXContract.ISpaceXPresenter by inject{parametersOf(this@SpaceXActivity)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +35,8 @@ class SpaceXActivity : AppCompatActivity(), ISpaceXContract.ISpaceXActivity {
     }
 
     override fun onDestroy() {
+        presenter.destroy()
         super.onDestroy()
-        presenter = null
     }
 
     private fun generateLaunchYearListener() {
@@ -44,7 +45,7 @@ class SpaceXActivity : AppCompatActivity(), ISpaceXContract.ISpaceXActivity {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val launchYearText: String = launchYear.text.toString()
-                presenter?.launchYearListener(launchYearText)
+                presenter.launchYearListener(launchYearText)
             }
         })
     }

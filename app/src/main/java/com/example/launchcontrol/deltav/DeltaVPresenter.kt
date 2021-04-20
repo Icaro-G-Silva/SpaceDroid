@@ -2,9 +2,9 @@
 package com.example.launchcontrol.deltav
 
 import com.example.launchcontrol.R
-import kotlin.math.ln
 
 class DeltaVPresenter(private val activity: IDeltaVContract.IDeltaVActivity): IDeltaVContract.IDeltaVPresenter {
+    private val deltaVUsecase = DeltaVUseCase()
 
     override fun initialize() {
         activity.displayMessage(R.string.message_empty_field)
@@ -20,12 +20,10 @@ class DeltaVPresenter(private val activity: IDeltaVContract.IDeltaVActivity): ID
             val isp = isp.toDouble()
             val gravity = gravity.toDouble()
 
-            if(totalMass <= 0.0 || dryMass <= 0.0 || isp <= 0.0 || gravity <= 0.0) {
-                activity.displayMessage(R.string.message_zero)
-            }
-            else {
-                val deltaV = ln(totalMass / dryMass) * isp * gravity
-                if(deltaV < 0) activity.displayMessage(R.string.message_less_than_zero) else activity.displayDeltaVMessage(R.string.message_deltav, deltaV.toString())
+            when(val deltaV = deltaVUsecase.calculateDeltaV(totalMass, dryMass, isp, gravity)) {
+                is DeltaVReturn.ErrorZero -> activity.displayMessage(R.string.message_zero)
+                is DeltaVReturn.ErrorLessThanZero -> activity.displayMessage(R.string.message_less_than_zero)
+                is DeltaVReturn.Success -> activity.displayDeltaVMessage(R.string.message_deltav, deltaV.value.toString())
             }
         } else {
             activity.displayMessage(R.string.message_empty_field)

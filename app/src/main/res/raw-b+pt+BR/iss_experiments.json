@@ -1,0 +1,148 @@
+{
+    "experiments": [
+        {
+            "title": "Pesquisa Humana",
+            "items": [
+                {
+                    "item": "Efeito do voo espacial prolongado no músculo esquelético humano"
+                },
+                {
+                    "item": "Sistemas cardiovasculares e pulmonares"
+                },
+                {
+                    "item": "Sistemas de saúde da tripulação"
+                },
+                {
+                    "item": "Comportamento e desempenho humanos"
+                },
+                {
+                    "item": "Sistema imunológico"
+                },
+                {
+                    "item": "Fisiologia integrada"
+                },
+                {
+                    "item": "Sistemas neurológicos e vestibulares"
+                },
+                {
+                    "item": "Radiação"
+                },
+                {
+                    "item": "Outros experimentos"
+                }
+            ]
+        },
+        {
+            "title": "Biologia e Biotecnologia",
+            "items": [
+                {
+                    "item": "Biologia animal"
+                },
+                {
+                    "item": "Biologia celular e biotecnologia"
+                },
+                {
+                    "item": "Microbiologia"
+                },
+                {
+                    "item": "Biologia vegetal"
+                },
+                {
+                    "item": "Cristalização de proteínas"
+                },
+                {
+                    "item": "Outros experimentos"
+                }
+            ]
+        },
+        {
+            "title": "Física e materiais",
+            "items": [
+                {
+                    "item": "Ciência da combustão"
+                },
+                {
+                    "item": "Física dos fluidos"
+                },
+                {
+                    "item": "Ciência de materiais"
+                },
+                {
+                    "item": "Biologia vegetal"
+                },
+                {
+                    "item": "Outros experimentos"
+                }
+            ]
+        },
+        {
+            "title": "Desenvolvimento tecnológico",
+            "items": [
+                {
+                    "item": "Caracterizando o ambiente de microgravidade na ISS"
+                },
+                {
+                    "item": "Monitoramento ambiental da ISS"
+                },
+                {
+                    "item": "Picosatélites e tecnologias de controle"
+                },
+                {
+                    "item": "Materiais para espaçonaves"
+                },
+                {
+                    "item": "Sistemas de espaçonaves"
+                },
+                {
+                    "item": "Ambientes espaciais e orbitais"
+                },
+                {
+                    "item": "Outros experimentos"
+                }
+            ]
+        },
+        {
+            "title": "Ciência da Terra e do espaço",
+            "items": [
+                {
+                    "item": "Ciência da Terra"
+                },
+                {
+                    "item": "Ciência espacial"
+                },
+                {
+                    "item": "Outros monitores e observatórios de campo"
+                }
+            ]
+        },
+        {
+            "title": "Resultado de operações na ISS",
+            "items": [
+                {
+                    "item": "Ciência iniciada pela tripulação"
+                },
+                {
+                    "item": "Atividades educacionais"
+                },
+                {
+                    "item": "Monitoramento ambiental da ISS"
+                },
+                {
+                    "item": "Monitoramento médico dos membros da tripulação da ISS"
+                },
+                {
+                    "item": "Sistemas de espaçonaves"
+                },
+                {
+                    "item": "Ambientes espaciais e orbitais"
+                },
+                {
+                    "item": "Objetivo do teste de desenvolvimento da estação"
+                },
+                {
+                    "item": "Objetivo Médico Suplementar"
+                }
+            ]
+        }
+    ]
+}

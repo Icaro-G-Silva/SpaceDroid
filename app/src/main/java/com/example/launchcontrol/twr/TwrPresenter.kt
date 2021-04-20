@@ -5,7 +5,7 @@ import com.example.launchcontrol.R
 import com.example.launchcontrol.enums.TwrEnum
 
 class TwrPresenter(private val activity: ITwrContract.ITwrActivity): ITwrContract.ITwrPresenter {
-
+    private val twrUseCase = TwrUseCase()
     private var quantityValue: Int = 1
 
     override fun initialize() {
@@ -23,15 +23,10 @@ class TwrPresenter(private val activity: ITwrContract.ITwrActivity): ITwrContrac
             val gravity = gravity.toDouble()
             val thrust = thrust.toDouble()
 
-            if(totalMass <= 0.0 || gravity <= 0.0 || thrust <= 0.0) activity.displayMessage(R.string.message_zero)
-            else {
-                val twr = (thrust * quantityValue) / (totalMass * gravity)
-                if(twr > 1) {
-                    activity.displayTwr(R.string.message_twr, twr.toString(), "\nLiftoff!")
-                }
-                else  {
-                    activity.displayTwr(R.string.message_twr, twr.toString(), "\nYou need more power!")
-                }
+            when(val twr = twrUseCase.calculateTwr(totalMass, gravity, thrust, quantityValue)) {
+                is TwrReturn.ErrorZero -> activity.displayMessage(R.string.message_zero)
+                is TwrReturn.Success -> activity.displayTwr(R.string.message_twr, twr.value.toString(), "\nYou need more power!")
+                is TwrReturn.SuccessLiftoff -> activity.displayTwr(R.string.message_twr, twr.value.toString(), "\nLiftoff!")
             }
         } else {
             activity.displayMessage(R.string.message_empty_field)
