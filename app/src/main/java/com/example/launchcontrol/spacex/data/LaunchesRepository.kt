@@ -1,9 +1,9 @@
 package com.example.launchcontrol.spacex.data
 
 import android.util.Log
-import com.example.launchcontrol.retrofit.entities.Launches
-import com.example.launchcontrol.retrofit.services.LaunchesService
-import com.example.launchcontrol.utils.SharedPreferencesReduced
+import com.example.launchcontrol.spacex.domain.entities.Launches
+import com.example.launchcontrol.spacex.data.spacex_retrofit.services.LaunchesService
+import com.example.launchcontrol.generals.utils.SharedPreferencesReduced
 import retrofit2.Call
 import retrofit2.Callback
 

@@ -8,10 +8,10 @@ import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.launchcontrol.R
-import com.example.launchcontrol.lists.recyclerviews.spacex.RecyclerViewSpaceXAdapter
-import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.spacex.domain.recyclerview.RecyclerViewSpaceXAdapter
+import com.example.launchcontrol.spacex.domain.entities.Launches
 import com.example.launchcontrol.spacex.ui.presenter.ISpaceXContract
-import com.example.launchcontrol.utils.Dialog
+import com.example.launchcontrol.generals.utils.Dialog
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 

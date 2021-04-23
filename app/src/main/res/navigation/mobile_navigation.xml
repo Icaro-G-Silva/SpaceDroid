@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.launchcontrol.isswiki.iss_sections.home.HomeFragment"
+        android:name="com.example.launchcontrol.isswiki.iss_sections.home.ui.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_structure"
-        android:name="com.example.launchcontrol.isswiki.iss_sections.structure.StructureFragment"
+        android:name="com.example.launchcontrol.isswiki.iss_sections.structure.ui.StructureFragment"
         android:label="@string/menu_structure"
         tools:layout="@layout/fragment_structure" />
 
     <fragment
         android:id="@+id/nav_science"
-        android:name="com.example.launchcontrol.isswiki.iss_sections.science.ScienceFragment"
+        android:name="com.example.launchcontrol.isswiki.iss_sections.science.ui.ScienceFragment"
         android:label="@string/menu_science"
         tools:layout="@layout/fragment_science" />
 
     <fragment
         android:id="@+id/nav_crew"
-        android:name="com.example.launchcontrol.isswiki.iss_sections.crew.CrewFragment"
+        android:name="com.example.launchcontrol.isswiki.iss_sections.crew.ui.CrewFragment"
         android:label="@string/menu_crew"
         tools:layout="@layout/fragment_crew" />
 

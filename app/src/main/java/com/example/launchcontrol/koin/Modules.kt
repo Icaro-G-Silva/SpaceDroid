@@ -1,12 +1,12 @@
 package com.example.launchcontrol.koin
 
-import com.example.launchcontrol.isswiki.iss_sections.science.ScienceRepository
-import com.example.launchcontrol.retrofit.services.LaunchesService
+import com.example.launchcontrol.isswiki.iss_sections.science.data.ScienceRepository
+import com.example.launchcontrol.spacex.data.spacex_retrofit.services.LaunchesService
 import com.example.launchcontrol.spacex.data.LaunchesRepository
 import com.example.launchcontrol.spacex.ui.presenter.ISpaceXContract
 import com.example.launchcontrol.spacex.ui.presenter.SpaceXPresenter
-import com.example.launchcontrol.utils.JsonReader
-import com.example.launchcontrol.utils.SharedPreferencesReduced
+import com.example.launchcontrol.generals.utils.JsonReader
+import com.example.launchcontrol.generals.utils.SharedPreferencesReduced
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.dsl.module

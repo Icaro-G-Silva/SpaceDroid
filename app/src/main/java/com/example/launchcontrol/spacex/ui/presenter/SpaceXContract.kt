@@ -1,6 +1,6 @@
 package com.example.launchcontrol.spacex.ui.presenter
 
-import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.spacex.domain.entities.Launches
 
 interface ISpaceXContract {
     interface ISpaceXPresenter {

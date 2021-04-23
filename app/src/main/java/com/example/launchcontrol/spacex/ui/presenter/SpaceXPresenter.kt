@@ -2,8 +2,8 @@ package com.example.launchcontrol.spacex.ui.presenter
 
 import android.annotation.SuppressLint
 import com.example.launchcontrol.R
-import com.example.launchcontrol.enums.SpaceXEnum
-import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.spacex.domain.entities.Launches
+import com.example.launchcontrol.spacex.domain.enums.SpaceXEnum
 import com.example.launchcontrol.spacex.data.LaunchesRepository
 import retrofit2.Call
 import retrofit2.Callback

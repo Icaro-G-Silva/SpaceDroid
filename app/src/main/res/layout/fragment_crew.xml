@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".isswiki.iss_sections.crew.CrewFragment"
+    tools:context=".isswiki.iss_sections.crew.ui.CrewFragment"
     android:background="@color/lighter_background">
 
     <TextView
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.launchcontrol.utils.Zoom
+    <com.example.launchcontrol.generals.utils.Zoom
         android:id="@+id/iss_crew_banner"
         android:layout_width="0dp"
         android:layout_height="235dp"

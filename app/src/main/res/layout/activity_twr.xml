@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".twr.TwrActivity">
+        tools:context=".twr.ui.TwrActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"

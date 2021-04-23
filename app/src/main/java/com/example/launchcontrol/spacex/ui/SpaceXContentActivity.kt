@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.example.launchcontrol.R
-import com.example.launchcontrol.retrofit.entities.Launches
+import com.example.launchcontrol.spacex.domain.entities.Launches
 
 class SpaceXContentActivity : AppCompatActivity() {
     private lateinit var missionName: TextView
