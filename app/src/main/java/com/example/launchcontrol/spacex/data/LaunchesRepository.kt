@@ -14,7 +14,7 @@ class LaunchesRepository(private val sharedPreferences: SharedPreferencesReduced
         if(launchYearPref.isEmpty()) {
             setLaunchYearOnPref(launchYearContent)
         } else {
-            Log.d("Year already searched", launchYearPref)
+//            Log.d("Year already searched", launchYearPref)
         }
         val call: Call<List<Launches>> = retrofit.getLaunches(launchYearContent)
         call.enqueue(callback)
