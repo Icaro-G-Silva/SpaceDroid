@@ -1,12 +1,11 @@
 package com.example.launchcontrol.spacex.ui.presenter
 
+import com.example.launchcontrol.R
 import com.example.launchcontrol.spacex.data.LaunchesRepository
 import com.example.launchcontrol.spacex.domain.entities.*
-import io.mockk.MockKAnnotations
-import io.mockk.every
+import com.example.launchcontrol.spacex.ui.SpaceXActivity
+import io.mockk.*
 import io.mockk.impl.annotations.MockK
-import io.mockk.slot
-import io.mockk.verify
 import junit.framework.TestCase
 import org.junit.Test
 import retrofit2.Call
@@ -21,26 +20,29 @@ class SpaceXPresenterTest : TestCase() {
 
     lateinit var presenter: SpaceXPresenter
 
+    lateinit var listLaunchesMock: List<Launches>
+
     override fun setUp() {
         super.setUp()
         MockKAnnotations.init(this, relaxUnitFun = true)
 
         presenter = SpaceXPresenter(activityMock, repositoryMock)
+
+        listLaunchesMock = listOf(Launches(
+                "123",
+                "",
+                Rocket("", SecondStage(listOf())),
+                LaunchSite(""),
+                Links("", "")
+        ))
     }
 
     @Test
-    fun testIcaro() {
+    fun testAPIWhenResponseIsOk() {
         val callback = slot<Callback<List<Launches>>>()
-        val listLaunch = listOf(Launches(
-            "123",
-            "",
-            Rocket("", SecondStage(listOf())),
-            LaunchSite(""),
-            Links("", "")
-        ))
 
         val response = Response.success(
-            listLaunch
+            listLaunchesMock
         )
 
         every {
@@ -51,6 +53,39 @@ class SpaceXPresenterTest : TestCase() {
 
         presenter.launchYearListener("2012")
 
-        verify { activityMock.renderRecycler(listLaunch) }
+        verify { activityMock.renderRecycler(listLaunchesMock) }
     }
+
+    @Test
+    fun testAPIWhenResponseIsBad() {
+        val callback = slot<Callback<List<Launches>>>()
+
+        every {
+            repositoryMock.getLaunches(capture(callback), any())
+        } answers {
+            callback.captured.onFailure(null, null)
+        }
+
+        presenter.launchYearListener("2020")
+
+        verify {
+            activityMock.setLoadingInvisible()
+            activityMock.showDialog(R.string.api_generics_error_message, R.string.api_generics_error_title)
+        }
+    }
+
+    @Test
+    fun testInputWhenMalformatedYear() {
+        presenter.launchYearListener("2000")
+
+        verify { activityMock.showDialog(R.string.mismatch_year_error_message, R.string.mismatch_year_error_title) }
+        confirmVerified(activityMock)
+    }
+
+    @Test
+    fun testWhenPresenterDestroyRelationWithActivity() {
+        presenter.destroy()
+        assertEquals(null, presenter.activity)
+    }
+
 }

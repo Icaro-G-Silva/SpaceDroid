@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SpaceXPresenter(private var activity: ISpaceXContract.ISpaceXActivity?, private val launchRepository: LaunchesRepository): ISpaceXContract.ISpaceXPresenter {
+class SpaceXPresenter(var activity: ISpaceXContract.ISpaceXActivity?, private val launchRepository: LaunchesRepository): ISpaceXContract.ISpaceXPresenter {
 
     private val yearPattern: String = SpaceXEnum.YearPattern.YEAR_PATTERN.yearPattern
     private val initialYear: Int = SpaceXEnum.InitialYear.INITIAL_YEAR.year

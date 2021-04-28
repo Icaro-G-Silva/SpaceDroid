@@ -34,7 +34,7 @@ class SpaceXActivity : AppCompatActivity(), ISpaceXContract.ISpaceXActivity {
         generateLaunchYearListener()
     }
 
-    override fun onDestroy() {
+    public override fun onDestroy() {
         presenter.destroy()
         super.onDestroy()
     }

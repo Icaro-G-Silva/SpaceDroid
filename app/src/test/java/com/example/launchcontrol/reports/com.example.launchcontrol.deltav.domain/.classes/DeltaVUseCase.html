@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DeltaVUseCase</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.launchcontrol.deltav.domain</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DeltaVUseCase (com.example.launchcontrol.deltav.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DeltaVUseCase</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.launchcontrol.deltav.domain
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import kotlin.math.ln
+<i>4</i>&nbsp;
+<b class="fc"><i>5</i>&nbsp;class DeltaVUseCase {</b>
+<i>6</i>&nbsp;    fun calculateDeltaV(totalMass: Double, dryMass: Double, isp: Double, gravity: Double): DeltaVReturn {
+<b class="fc"><i>7</i>&nbsp;        if(totalMass &lt;= 0.0 || dryMass &lt;= 0.0 || isp &lt;= 0.0 || gravity &lt;= 0.0) {</b>
+<b class="fc"><i>8</i>&nbsp;            return DeltaVReturn.ErrorZero()</b>
+<i>9</i>&nbsp;        }
+<i>10</i>&nbsp;        else {
+<b class="fc"><i>11</i>&nbsp;            val deltaV = ln(totalMass / dryMass) * isp * gravity</b>
+<b class="fc"><i>12</i>&nbsp;            return if(deltaV &lt; 0) DeltaVReturn.ErrorLessThanZero() else DeltaVReturn.Success(deltaV)</b>
+<i>13</i>&nbsp;        }
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;}
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;sealed class DeltaVReturn {
+<i>18</i>&nbsp;    class ErrorZero(): DeltaVReturn()
+<i>19</i>&nbsp;    class ErrorLessThanZero(): DeltaVReturn()
+<i>20</i>&nbsp;    class Success(val value: Double): DeltaVReturn()
+<i>21</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-28 15:15</div>
+</div>
+</body>
+</html>
